@@ -1,0 +1,21 @@
+RETO DATA SCIENTIST
+
+Adjunto encontrará tres bases de datos que describen la información
+de los accidentes de tráfico ocurridos en UK entre el año 2005 al
+2014. Para conocer más información de estos datasets y las variables
+presentes ingrese a: https://www.kaggle.com/daveianhickey/2000-
+16-traffic-flow-england-scotland-wales
+
+A continuación se detallan algunas preguntas de negocio que un
+cliente como el gobierno de UK quisiera resolver a partir de los datos
+entregados:
+
+    1. ¿Cuáles son las variables que más impactan en la severidad
+        de ocurrencia de un accidente?
+    2. ¿Cuáles son las ubicaciones que presentan mayor cantidad
+        de accidentes y severidad en el periodo 2005 a 2014? ¿Han
+        cambiado en el tiempo?
+
+
+Presente un informe que permita al cliente comprender de manera
+clara y sencilla las respuestas a las preguntas de negocio planteadas.
