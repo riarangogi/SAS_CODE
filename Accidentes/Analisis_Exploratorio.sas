@@ -12,3 +12,18 @@ DATA ACCIDENT.ACCIDENTS_2005_TO_2014 (KEEP=Longitude Latitude Accident_Severity
 	Urban_or_Rural_Area Year);
 	SET ACCIDENT.ACCIDENTS_2005_TO_2014;
 RUN;
+
+
+/*** Analizar variables categóricas ***/
+
+PROC FREQ DATA=ACCIDENT.ACCIDENTS_2005_TO_2014;
+	TABLES Road_Type;
+RUN;
+
+
+PROC SGPLOT DATA=ACCIDENT.ACCIDENTS_2005_TO_2014;
+	VBAR Road_Type /;
+	YAXIS GRID;
+RUN;
+
+
