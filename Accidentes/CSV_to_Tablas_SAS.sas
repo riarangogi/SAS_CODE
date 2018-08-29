@@ -1,7 +1,7 @@
 /*Codigo para convertir los archivos csv en tablas  SAS. Dichas tablas se  guardan en
 la libreria ACCIDENT*/
 
-FILENAME REFFILE '/folders/myshortcuts/myfolder/Accidentes/datos crudos/accidents_2005_to_2007.csv';
+FILENAME REFFILE '/folders/myfolders/Accidentes/accidents_2005_to_2007.csv';
 
 PROC IMPORT DATAFILE=REFFILE
 	DBMS=CSV
@@ -9,7 +9,7 @@ PROC IMPORT DATAFILE=REFFILE
 	GETNAMES=YES;
 RUN;
 
-FILENAME REFFILE '/folders/myshortcuts/myfolder/Accidentes/datos crudos/accidents_2009_to_2011.csv';
+FILENAME REFFILE '/folders/myfolders/Accidentes/accidents_2009_to_2011.csv';
 
 PROC IMPORT DATAFILE=REFFILE
 	DBMS=CSV
@@ -17,7 +17,7 @@ PROC IMPORT DATAFILE=REFFILE
 	GETNAMES=YES;
 RUN;
 
-FILENAME REFFILE '/folders/myshortcuts/myfolder/Accidentes/datos crudos/accidents_2012_to_2014.csv';
+FILENAME REFFILE '/folders/myfolders/Accidentes/accidents_2012_to_2014.csv';
 
 PROC IMPORT DATAFILE=REFFILE
 	DBMS=CSV
@@ -30,4 +30,9 @@ DATA ACCIDENT.accidents_2005_to_2014;
 	SET ACCIDENT.accidents_2005_to_2007 
 		ACCIDENT.accidents_2009_to_2011 
 		ACCIDENT.accidents_2012_to_2014;
+RUN;
+
+/*Eliminar los registros duplicados*/
+PROC SORT DATA=ACCIDENT.accidents_2005_to_2014 NODUP OUT=ACCIDENT.accidents_2005_to_2014;
+BY Year;
 RUN;
